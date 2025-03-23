@@ -67,7 +67,7 @@ namespace marketplace
                         }
                         else
                         {
-                            MessageBox.Show("Invalid username or password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Invalid usernames nga kasi or password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
