@@ -60,7 +60,7 @@ namespace marketplace
                         // Compare both hashes
                         if (storedHashedPassword == hashedInputPassword)
                         {
-                            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Login successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             BROWSE_FORM browse_form = new BROWSE_FORM();
                             browse_form.Show();
                             this.Hide();
