@@ -27,7 +27,7 @@ namespace marketplace
 
         private void txtsignupbxusername_TextChanged(object sender, EventArgs e)
         {
-
+             
         }
 
         private void txtsignupbxgmail_TextChanged(object sender, EventArgs e)
@@ -176,6 +176,11 @@ namespace marketplace
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

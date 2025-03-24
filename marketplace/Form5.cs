@@ -7,27 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace marketplace
 {
-    public partial class BROWSE_FORM: Form
+    public partial class Sellit_form: Form
     {
-        public BROWSE_FORM()
+        public Sellit_form()
         {
             InitializeComponent();
         }
 
-        private void BROWSE_FORM_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnsellit_Click(object sender, EventArgs e)
         {
-            Sellit_form sellit = new Sellit_form();
-            sellit.Show();
-            this.Hide();
+            
         }
     }
 }
