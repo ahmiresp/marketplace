@@ -30,17 +30,17 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtloginbxusername = new System.Windows.Forms.TextBox();
-            this.txtloginbxpassword = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnlogin = new System.Windows.Forms.Button();
             this.buttonTestConnection = new System.Windows.Forms.Button();
+            this.btnlogin = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtloginbxpassword = new System.Windows.Forms.TextBox();
+            this.txtloginbxusername = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,94 +71,26 @@
             this.panel2.Size = new System.Drawing.Size(304, 275);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // buttonTestConnection
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(94, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "LOG IN ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonTestConnection.Location = new System.Drawing.Point(22, 230);
+            this.buttonTestConnection.Name = "buttonTestConnection";
+            this.buttonTestConnection.Size = new System.Drawing.Size(75, 23);
+            this.buttonTestConnection.TabIndex = 14;
+            this.buttonTestConnection.Text = "button1";
+            this.buttonTestConnection.UseVisualStyleBackColor = true;
+            this.buttonTestConnection.Click += new System.EventHandler(this.buttonTestConnection_Click);
             // 
-            // label2
+            // btnlogin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(19, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Username : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(91, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "_____________________________";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(23, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Password : ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(91, 169);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "_____________________________";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(57, 201);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Don’t have an account?";
-            // 
-            // txtloginbxusername
-            // 
-            this.txtloginbxusername.AcceptsReturn = true;
-            this.txtloginbxusername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
-            this.txtloginbxusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtloginbxusername.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtloginbxusername.Location = new System.Drawing.Point(94, 108);
-            this.txtloginbxusername.Name = "txtloginbxusername";
-            this.txtloginbxusername.Size = new System.Drawing.Size(119, 13);
-            this.txtloginbxusername.TabIndex = 8;
-            // 
-            // txtloginbxpassword
-            // 
-            this.txtloginbxpassword.AcceptsReturn = true;
-            this.txtloginbxpassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
-            this.txtloginbxpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtloginbxpassword.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtloginbxpassword.Location = new System.Drawing.Point(94, 156);
-            this.txtloginbxpassword.Name = "txtloginbxpassword";
-            this.txtloginbxpassword.Size = new System.Drawing.Size(119, 13);
-            this.txtloginbxpassword.TabIndex = 9;
+            this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.Location = new System.Drawing.Point(105, 228);
+            this.btnlogin.Name = "btnlogin";
+            this.btnlogin.Size = new System.Drawing.Size(96, 26);
+            this.btnlogin.TabIndex = 13;
+            this.btnlogin.Text = "Log In";
+            this.btnlogin.UseVisualStyleBackColor = true;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // linkLabel1
             // 
@@ -172,26 +104,95 @@
             this.linkLabel1.Text = "Sign Up";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // btnlogin
+            // txtloginbxpassword
             // 
-            this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.Location = new System.Drawing.Point(105, 228);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(96, 26);
-            this.btnlogin.TabIndex = 13;
-            this.btnlogin.Text = "Log In";
-            this.btnlogin.UseVisualStyleBackColor = true;
-            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
+            this.txtloginbxpassword.AcceptsReturn = true;
+            this.txtloginbxpassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
+            this.txtloginbxpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtloginbxpassword.ForeColor = System.Drawing.SystemColors.Menu;
+            this.txtloginbxpassword.Location = new System.Drawing.Point(94, 156);
+            this.txtloginbxpassword.Name = "txtloginbxpassword";
+            this.txtloginbxpassword.Size = new System.Drawing.Size(119, 13);
+            this.txtloginbxpassword.TabIndex = 9;
             // 
-            // buttonTestConnection
+            // txtloginbxusername
             // 
-            this.buttonTestConnection.Location = new System.Drawing.Point(22, 230);
-            this.buttonTestConnection.Name = "buttonTestConnection";
-            this.buttonTestConnection.Size = new System.Drawing.Size(75, 23);
-            this.buttonTestConnection.TabIndex = 14;
-            this.buttonTestConnection.Text = "button1";
-            this.buttonTestConnection.UseVisualStyleBackColor = true;
-            this.buttonTestConnection.Click += new System.EventHandler(this.buttonTestConnection_Click);
+            this.txtloginbxusername.AcceptsReturn = true;
+            this.txtloginbxusername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
+            this.txtloginbxusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtloginbxusername.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtloginbxusername.Location = new System.Drawing.Point(94, 108);
+            this.txtloginbxusername.Name = "txtloginbxusername";
+            this.txtloginbxusername.Size = new System.Drawing.Size(119, 13);
+            this.txtloginbxusername.TabIndex = 8;
+            this.txtloginbxusername.TextChanged += new System.EventHandler(this.txtloginbxusername_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(57, 201);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Don’t have an account?";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(91, 169);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(210, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "_____________________________";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(23, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Password : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(91, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(210, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "_____________________________";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(19, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Username : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(94, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "LOG IN ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginForm
             // 

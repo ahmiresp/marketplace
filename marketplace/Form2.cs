@@ -122,5 +122,10 @@ namespace marketplace
                 }
             }
         }
+
+        private void txtloginbxusername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -56,7 +56,7 @@ namespace marketplace
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(gmail) ||
                 string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(contact))
             {
-                MessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
