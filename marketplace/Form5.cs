@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO; // Required for handling file paths
 
 namespace marketplace
 {
@@ -19,6 +20,9 @@ namespace marketplace
             SetItemNamePlaceholder(); // Set the initial placeholder text for txtItemName
             SetPricePlaceholder(); // Set the initial placeholder text for txtboxprice
             SetLocationPlaceholder(); // Set the initial placeholder text for txtboxlocation
+                                      // Assign mouse events for cursor change
+            pctbxsellitem.MouseEnter += pctbxsellitem_MouseEnter;
+            pctbxsellitem.MouseLeave += pctbxsellitem_MouseLeave;
         }
 
         // Placeholder for richTextBox1
@@ -143,6 +147,31 @@ namespace marketplace
             SetItemNamePlaceholder();
             SetPricePlaceholder();
             SetLocationPlaceholder();
+        }
+        private void pctbxsellitem_MouseEnter(object sender, EventArgs e)
+        {
+            pctbxsellitem.Cursor = Cursors.Hand; // Change cursor to hand when hovering
+        }
+
+        private void pctbxsellitem_MouseLeave(object sender, EventArgs e)
+        {
+            pctbxsellitem.Cursor = Cursors.Default; // Change back to default when leaving
+        }
+        // Click event for PictureBox to allow user to upload an image
+        private void pctbxsellitem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Select an Image";
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedImagePath = openFileDialog.FileName;
+                    pctbxsellitem.Image = Image.FromFile(selectedImagePath);
+                    pctbxsellitem.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust image to fit PictureBox
+                }
+            }
         }
     }
 }
