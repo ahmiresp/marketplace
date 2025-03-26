@@ -184,5 +184,10 @@ namespace marketplace
         {
 
         }
+
+        private void signupForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

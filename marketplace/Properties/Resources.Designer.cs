@@ -89,5 +89,15 @@ namespace marketplace.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_03_26_235316 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-03-26 235316", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
