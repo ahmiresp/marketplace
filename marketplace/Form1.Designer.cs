@@ -29,36 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnbrowes = new System.Windows.Forms.Button();
-            this.btnsellit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.BTNSIGNLOG = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnsellit = new System.Windows.Forms.Button();
+            this.btnbrowes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::marketplace.Properties.Resources.logomarketplace_removebg_preview;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(488, 273);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(48)))));
             this.panel1.Controls.Add(this.BTNSIGNLOG);
             this.panel1.Controls.Add(this.button1);
@@ -67,57 +56,61 @@
             this.panel1.ForeColor = System.Drawing.Color.Snow;
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 32);
+            this.panel1.Size = new System.Drawing.Size(484, 32);
             this.panel1.TabIndex = 9;
-            // 
-            // btnbrowes
-            // 
-            this.btnbrowes.AutoSize = true;
-            this.btnbrowes.BackColor = System.Drawing.Color.Transparent;
-            this.btnbrowes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnbrowes.Location = new System.Drawing.Point(13, 0);
-            this.btnbrowes.Name = "btnbrowes";
-            this.btnbrowes.Size = new System.Drawing.Size(90, 32);
-            this.btnbrowes.TabIndex = 0;
-            this.btnbrowes.Text = "BROWSE";
-            this.btnbrowes.UseVisualStyleBackColor = false;
-            // 
-            // btnsellit
-            // 
-            this.btnsellit.AutoSize = true;
-            this.btnsellit.BackColor = System.Drawing.Color.Transparent;
-            this.btnsellit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnsellit.Location = new System.Drawing.Point(109, 0);
-            this.btnsellit.Name = "btnsellit";
-            this.btnsellit.Size = new System.Drawing.Size(86, 32);
-            this.btnsellit.TabIndex = 1;
-            this.btnsellit.Text = "SELL IT";
-            this.btnsellit.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(201, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 32);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "CATEGORY";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // BTNSIGNLOG
             // 
             this.BTNSIGNLOG.AutoSize = true;
+            this.BTNSIGNLOG.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BTNSIGNLOG.BackColor = System.Drawing.Color.Transparent;
             this.BTNSIGNLOG.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNSIGNLOG.Location = new System.Drawing.Point(368, 0);
+            this.BTNSIGNLOG.Location = new System.Drawing.Point(375, 5);
             this.BTNSIGNLOG.Name = "BTNSIGNLOG";
-            this.BTNSIGNLOG.Size = new System.Drawing.Size(108, 32);
+            this.BTNSIGNLOG.Size = new System.Drawing.Size(108, 23);
             this.BTNSIGNLOG.TabIndex = 3;
             this.BTNSIGNLOG.Text = "LOG IN / SIGN UP";
             this.BTNSIGNLOG.UseVisualStyleBackColor = false;
             this.BTNSIGNLOG.Click += new System.EventHandler(this.BTNSIGNLOG_Click);
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(201, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "CATEGORY";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnsellit
+            // 
+            this.btnsellit.AutoSize = true;
+            this.btnsellit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsellit.BackColor = System.Drawing.Color.Transparent;
+            this.btnsellit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnsellit.Location = new System.Drawing.Point(121, 5);
+            this.btnsellit.Name = "btnsellit";
+            this.btnsellit.Size = new System.Drawing.Size(56, 23);
+            this.btnsellit.TabIndex = 1;
+            this.btnsellit.Text = "SELL IT";
+            this.btnsellit.UseVisualStyleBackColor = false;
+            // 
+            // btnbrowes
+            // 
+            this.btnbrowes.AutoSize = true;
+            this.btnbrowes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnbrowes.BackColor = System.Drawing.Color.Transparent;
+            this.btnbrowes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnbrowes.Location = new System.Drawing.Point(13, 6);
+            this.btnbrowes.Name = "btnbrowes";
+            this.btnbrowes.Size = new System.Drawing.Size(65, 23);
+            this.btnbrowes.TabIndex = 0;
+            this.btnbrowes.Text = "BROWSE";
+            this.btnbrowes.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -166,11 +159,24 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "ABOUT US";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::marketplace.Properties.Resources.logomarketplace_removebg_preview;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(488, 273);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 680);
+            this.ClientSize = new System.Drawing.Size(484, 680);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -181,9 +187,10 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
