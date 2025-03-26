@@ -18,7 +18,7 @@ namespace marketplace
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-DBRG5JF\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -47,48 +47,69 @@ namespace marketplace
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+
+            // Clear previous errors
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+
             string username = txtsignupbxusername.Text.Trim();
             string gmail = txtsignupbxgmail.Text.Trim();
             string password = txtsignupbxpassword.Text.Trim();
             string contact = txtsignupbxcontact.Text.Trim();
 
-            //  Validation for empty fields
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(gmail) ||
-                string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(contact))
+            bool isValid = true;
+
+            // 🟢 Username Validation
+            if (string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Please fill all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider1.SetError(txtsignupbxusername, "Username cannot be empty.");
+                isValid = false;
             }
 
-            //  Validation for Gmail format
-            if (!gmail.Contains("@") || !gmail.Contains("."))
+            // 🟢 Gmail Validation
+            if (string.IsNullOrWhiteSpace(gmail))
             {
-                MessageBox.Show("Invalid Gmail format!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider2.SetError(txtsignupbxgmail, "Gmail cannot be empty.");
+                isValid = false;
+            }
+            else if (!gmail.Contains("@") || !gmail.Contains("."))
+            {
+                errorProvider2.SetError(txtsignupbxgmail, "Invalid Gmail format.");
+                isValid = false;
             }
 
-            // Password length validation (8-15 characters)
-            if (password.Length < 8 || password.Length > 15)
+            // 🟢 Password Validation
+            if (string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Password must be between 8 and 15 characters.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider3.SetError(txtsignupbxpassword, "Password cannot be empty.");
+                isValid = false;
+            }
+            else if (password.Length < 8 || password.Length > 15)
+            {
+                errorProvider3.SetError(txtsignupbxpassword, "Password must be between 8 and 15 characters.");
+                isValid = false;
             }
 
-            // Contact number validation (must be exactly 11 digits)
-            if (contact.Length != 11 || !IsAllDigits(contact))
+            // 🟢 Contact Number Validation
+            if (string.IsNullOrWhiteSpace(contact))
             {
-                MessageBox.Show("Contact number must be exactly 11 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider4.SetError(txtsignupbxcontact, "Contact number cannot be empty.");
+                isValid = false;
+            }
+            else if (contact.Length != 11 || !IsAllDigits(contact))
+            {
+                errorProvider4.SetError(txtsignupbxcontact, "Contact number must be exactly 11 digits.");
+                isValid = false;
             }
 
-            // Hash the password
-            string hashedPassword = HashPassword(password);
-
+            // 🚨 **Check for existing Username & Gmail WITHOUT stopping execution**
             try
             {
                 conn.Open();
 
-                // Check if Username already exists
+                // 🟢 Check if Username already exists
                 string checkUsernameQuery = "SELECT COUNT(*) FROM signup_form WHERE username = @username";
                 using (SqlCommand checkUsernameCmd = new SqlCommand(checkUsernameQuery, conn))
                 {
@@ -96,12 +117,12 @@ namespace marketplace
                     int usernameCount = (int)checkUsernameCmd.ExecuteScalar();
                     if (usernameCount > 0)
                     {
-                        MessageBox.Show("Username is already taken! Please choose another one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                        errorProvider1.SetError(txtsignupbxusername, "Username is already taken! Choose another one.");
+                        isValid = false;
                     }
                 }
 
-                // Check if Gmail already exists
+                // 🟢 Check if Gmail already exists
                 string checkGmailQuery = "SELECT COUNT(*) FROM signup_form WHERE gmail = @gmail";
                 using (SqlCommand checkGmailCmd = new SqlCommand(checkGmailQuery, conn))
                 {
@@ -109,10 +130,33 @@ namespace marketplace
                     int gmailCount = (int)checkGmailCmd.ExecuteScalar();
                     if (gmailCount > 0)
                     {
-                        MessageBox.Show("Gmail already exists! Try another one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                        errorProvider2.SetError(txtsignupbxgmail, "Gmail already exists! Try another one.");
+                        isValid = false;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Stop execution if database check fails
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            // 🚨 **If any validation failed, STOP execution here**
+            if (!isValid)
+            {
+                return;
+            }
+
+            // ✅ If all validations pass, continue with signup
+            string hashedPassword = HashPassword(password);
+
+            try
+            {
+                conn.Open();
 
                 // ✅ Insert new user
                 string query = "INSERT INTO signup_form (username, gmail, password, contact) VALUES (@username, @gmail, @password, @contact)";
@@ -120,7 +164,7 @@ namespace marketplace
                 {
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@gmail", gmail);
-                    cmd.Parameters.AddWithValue("@password", hashedPassword);  // Store hashed password
+                    cmd.Parameters.AddWithValue("@password", hashedPassword);
                     cmd.Parameters.AddWithValue("@contact", contact);
 
                     int result = cmd.ExecuteNonQuery();
@@ -146,7 +190,6 @@ namespace marketplace
             {
                 conn.Close();
             }
-
         }
 
         private bool IsAllDigits(string str)
@@ -181,6 +224,11 @@ namespace marketplace
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

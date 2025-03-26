@@ -14,7 +14,7 @@ namespace marketplace
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-DBRG5JF\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -103,7 +103,7 @@ namespace marketplace
 
         private void buttonTestConnection_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;";
+            string connString = @"Data Source=DESKTOP-DBRG5JF\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -124,6 +124,21 @@ namespace marketplace
         }
 
         private void txtloginbxusername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void loginForm_Load(object sender, EventArgs e)
         {
 
         }
