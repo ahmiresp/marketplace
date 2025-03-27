@@ -18,7 +18,7 @@ namespace marketplace
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-DBRG5JF\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
+        SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP - V8S0DNV\SQLEXPRESS; Initial Catalog = marketplace; Integrated Security = True;");
 
         private void label5_Click(object sender, EventArgs e)
         {
