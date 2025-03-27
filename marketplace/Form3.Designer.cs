@@ -189,7 +189,7 @@
             this.txtsignupbxcontact.Location = new System.Drawing.Point(101, 252);
             this.txtsignupbxcontact.Margin = new System.Windows.Forms.Padding(4);
             this.txtsignupbxcontact.Name = "txtsignupbxcontact";
-            this.txtsignupbxcontact.Size = new System.Drawing.Size(185, 15);
+            this.txtsignupbxcontact.Size = new System.Drawing.Size(251, 15);
             this.txtsignupbxcontact.TabIndex = 18;
             this.txtsignupbxcontact.TextChanged += new System.EventHandler(this.txtsignupbxcontact_TextChanged);
             // 
@@ -214,7 +214,7 @@
             this.txtsignupbxpassword.Location = new System.Drawing.Point(128, 197);
             this.txtsignupbxpassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtsignupbxpassword.Name = "txtsignupbxpassword";
-            this.txtsignupbxpassword.Size = new System.Drawing.Size(159, 15);
+            this.txtsignupbxpassword.Size = new System.Drawing.Size(224, 15);
             this.txtsignupbxpassword.TabIndex = 16;
             this.txtsignupbxpassword.UseSystemPasswordChar = true;
             this.txtsignupbxpassword.TextChanged += new System.EventHandler(this.txtsignupbxpassword_TextChanged);
@@ -251,7 +251,7 @@
             this.txtsignupbxgmail.Location = new System.Drawing.Point(85, 140);
             this.txtsignupbxgmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtsignupbxgmail.Name = "txtsignupbxgmail";
-            this.txtsignupbxgmail.Size = new System.Drawing.Size(201, 15);
+            this.txtsignupbxgmail.Size = new System.Drawing.Size(267, 15);
             this.txtsignupbxgmail.TabIndex = 12;
             this.txtsignupbxgmail.TextChanged += new System.EventHandler(this.txtsignupbxgmail_TextChanged);
             // 
@@ -289,7 +289,7 @@
             this.txtsignupbxusername.Location = new System.Drawing.Point(128, 89);
             this.txtsignupbxusername.Margin = new System.Windows.Forms.Padding(4);
             this.txtsignupbxusername.Name = "txtsignupbxusername";
-            this.txtsignupbxusername.Size = new System.Drawing.Size(159, 15);
+            this.txtsignupbxusername.Size = new System.Drawing.Size(224, 15);
             this.txtsignupbxusername.TabIndex = 9;
             this.txtsignupbxusername.TextChanged += new System.EventHandler(this.txtsignupbxusername_TextChanged);
             // 

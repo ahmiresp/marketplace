@@ -161,5 +161,11 @@
   <ItemGroup>
     <None Include="Resources\Screenshot 2025-03-26 235316.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\hidebutton.png" />
+    <Content Include="Properties\showbuton.png" />
+    <Content Include="Resources\hidebutton.png" />
+    <Content Include="Resources\showbuton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

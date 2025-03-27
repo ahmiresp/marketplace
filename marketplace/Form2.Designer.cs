@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonTestConnection = new System.Windows.Forms.Button();
@@ -41,7 +42,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,7 +124,7 @@
             this.txtloginbxpassword.Location = new System.Drawing.Point(125, 192);
             this.txtloginbxpassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtloginbxpassword.Name = "txtloginbxpassword";
-            this.txtloginbxpassword.Size = new System.Drawing.Size(159, 15);
+            this.txtloginbxpassword.Size = new System.Drawing.Size(225, 15);
             this.txtloginbxpassword.TabIndex = 9;
             this.txtloginbxpassword.UseSystemPasswordChar = true;
             // 
@@ -132,7 +137,7 @@
             this.txtloginbxusername.Location = new System.Drawing.Point(125, 133);
             this.txtloginbxusername.Margin = new System.Windows.Forms.Padding(4);
             this.txtloginbxusername.Name = "txtloginbxusername";
-            this.txtloginbxusername.Size = new System.Drawing.Size(159, 15);
+            this.txtloginbxusername.Size = new System.Drawing.Size(225, 15);
             this.txtloginbxusername.TabIndex = 8;
             this.txtloginbxusername.TextChanged += new System.EventHandler(this.txtloginbxusername_TextChanged);
             // 
@@ -210,6 +215,14 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,6 +237,8 @@
             this.Load += new System.EventHandler(this.loginForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,5 +258,7 @@
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button buttonTestConnection;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

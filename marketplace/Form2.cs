@@ -30,36 +30,52 @@ namespace marketplace
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+
             string username = txtloginbxusername.Text.Trim();
             string user_password = txtloginbxpassword.Text.Trim();
+            bool isValid = true;
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(user_password))
+            if (string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Please enter both username and password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                errorProvider1.SetError(txtloginbxusername, "Username cannot be empty.");
+                isValid = false;
             }
 
+            // ✅ Password Validation
+            if (string.IsNullOrWhiteSpace(user_password))
+            {
+                errorProvider2.SetError(txtloginbxpassword, "Password cannot be empty.");
+                isValid = false;
+            }
+            if (!isValid) 
+                return;
+            // 🚨 If any validation fails, stop execution
             try
             {
                 conn.Open();
 
-                // Fetch the stored hashed password for the given username
+                // Check if username exists
                 string query = "SELECT password FROM signup_form WHERE username = @username";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
                     object result = cmd.ExecuteScalar();
 
-                    if (result != null)
+                    if (result == null)
+                    {
+                        // 🚨 Username does not exist
+                        errorProvider1.SetError(txtloginbxusername, "Username not found.");
+                    }
+                    else
                     {
                         string storedHashedPassword = result.ToString(); // Get hashed password from DB
+                        string hashedInputPassword = HashPassword(user_password); // Hash entered password
 
-                        // Hash the entered password using SHA-256
-                        string hashedInputPassword = HashPassword(user_password);
-
-                        // Compare both hashes
                         if (storedHashedPassword == hashedInputPassword)
                         {
+                            // ✅ Login Successful
                             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             BROWSE_FORM browse_form = new BROWSE_FORM();
                             browse_form.Show();
@@ -67,12 +83,9 @@ namespace marketplace
                         }
                         else
                         {
-                            MessageBox.Show("Invalid username or password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // 🚨 Incorrect password
+                            MessageBox.Show("Invalid credentials. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Username not found.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -85,6 +98,7 @@ namespace marketplace
                 conn.Close();
             }
         }
+    
 
         // Hash the password using SHA-256
         private string HashPassword(string password)
@@ -139,6 +153,21 @@ namespace marketplace
         }
 
         private void loginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hideButton_Click(object sender, EventArgs e)
         {
 
         }
