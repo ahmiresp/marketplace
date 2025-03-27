@@ -18,7 +18,7 @@ namespace marketplace
 
         private void label3_Click(object sender, EventArgs e)
         {
-            // Label click event (kept to prevent errors)
+           
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -124,6 +124,11 @@ namespace marketplace
         }
 
         private void txtloginbxusername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
