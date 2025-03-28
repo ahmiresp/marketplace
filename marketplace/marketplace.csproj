@@ -165,6 +165,7 @@
     <Content Include="Properties\hidebutton.png" />
     <Content Include="Properties\showbuton.png" />
     <Content Include="Resources\hidebutton.png" />
+    <None Include="Resources\Screenshot_2025-03-27_092353-removebg-preview.png" />
     <Content Include="Resources\showbuton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
