@@ -29,5 +29,10 @@ namespace marketplace
             sellit.Show();
             this.Hide();
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

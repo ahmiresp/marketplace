@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BTNCHAT = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnsellit = new System.Windows.Forms.Button();
             this.btnbrowes = new System.Windows.Forms.Button();
-            this.BTNCHAT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,18 @@
             this.panel1.Size = new System.Drawing.Size(706, 31);
             this.panel1.TabIndex = 10;
             // 
+            // BTNCHAT
+            // 
+            this.BTNCHAT.AutoSize = true;
+            this.BTNCHAT.BackColor = System.Drawing.Color.Transparent;
+            this.BTNCHAT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTNCHAT.Location = new System.Drawing.Point(283, 0);
+            this.BTNCHAT.Name = "BTNCHAT";
+            this.BTNCHAT.Size = new System.Drawing.Size(76, 32);
+            this.BTNCHAT.TabIndex = 4;
+            this.BTNCHAT.Text = "CHAT";
+            this.BTNCHAT.UseVisualStyleBackColor = false;
+            // 
             // btnAccount
             // 
             this.btnAccount.AutoSize = true;
@@ -62,6 +74,7 @@
             this.btnAccount.TabIndex = 3;
             this.btnAccount.Text = "ACCOUNT";
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // button1
             // 
@@ -99,18 +112,6 @@
             this.btnbrowes.TabIndex = 0;
             this.btnbrowes.Text = "BROWSE";
             this.btnbrowes.UseVisualStyleBackColor = false;
-            // 
-            // BTNCHAT
-            // 
-            this.BTNCHAT.AutoSize = true;
-            this.BTNCHAT.BackColor = System.Drawing.Color.Transparent;
-            this.BTNCHAT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNCHAT.Location = new System.Drawing.Point(283, 0);
-            this.BTNCHAT.Name = "BTNCHAT";
-            this.BTNCHAT.Size = new System.Drawing.Size(76, 32);
-            this.BTNCHAT.TabIndex = 4;
-            this.BTNCHAT.Text = "CHAT";
-            this.BTNCHAT.UseVisualStyleBackColor = false;
             // 
             // BROWSE_FORM
             // 

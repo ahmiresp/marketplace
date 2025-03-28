@@ -43,64 +43,64 @@
             this.txtboxprice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtItemName = new System.Windows.Forms.TextBox();
+            this.pctbxsellitem = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.pnlaccount = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pctbxsellitem = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.linklabelverify = new System.Windows.Forms.LinkLabel();
-            this.pnlhereclicked = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.btnsubmitaccount = new System.Windows.Forms.Button();
+            this.pnlaccount = new System.Windows.Forms.Panel();
             this.btnlogout = new System.Windows.Forms.Button();
+            this.pnlhereclicked = new System.Windows.Forms.Panel();
+            this.btnsubmitaccount = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.linklabelverify = new System.Windows.Forms.LinkLabel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.AccountContact = new System.Windows.Forms.Label();
+            this.AccountName = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnlsellitem.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.pnlaccount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbxsellitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pnlaccount.SuspendLayout();
             this.pnlhereclicked.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -224,6 +224,7 @@
             this.btnAdditem.TabIndex = 22;
             this.btnAdditem.Text = "Add Item";
             this.btnAdditem.UseVisualStyleBackColor = false;
+            this.btnAdditem.Click += new System.EventHandler(this.btnAdditem_Click);
             // 
             // label4
             // 
@@ -245,6 +246,7 @@
             this.txtboxlocation.Name = "txtboxlocation";
             this.txtboxlocation.Size = new System.Drawing.Size(261, 13);
             this.txtboxlocation.TabIndex = 20;
+            this.txtboxlocation.TextChanged += new System.EventHandler(this.txtboxlocation_TextChanged_1);
             this.txtboxlocation.Enter += new System.EventHandler(this.txtboxlocation_Enter);
             this.txtboxlocation.Leave += new System.EventHandler(this.txtboxlocation_Leave);
             // 
@@ -268,6 +270,7 @@
             this.txtboxprice.Name = "txtboxprice";
             this.txtboxprice.Size = new System.Drawing.Size(261, 13);
             this.txtboxprice.TabIndex = 18;
+            this.txtboxprice.TextChanged += new System.EventHandler(this.txtboxprice_TextChanged_1);
             this.txtboxprice.Enter += new System.EventHandler(this.txtboxprice_Enter);
             this.txtboxprice.Leave += new System.EventHandler(this.txtboxprice_Leave);
             // 
@@ -294,6 +297,29 @@
             this.txtItemName.TextChanged += new System.EventHandler(this.txtItemName_TextChanged);
             this.txtItemName.Enter += new System.EventHandler(this.txtItemName_Enter);
             this.txtItemName.Leave += new System.EventHandler(this.txtItemName_Leave);
+            // 
+            // pctbxsellitem
+            // 
+            this.pctbxsellitem.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_185333;
+            this.pctbxsellitem.Location = new System.Drawing.Point(34, 72);
+            this.pctbxsellitem.Name = "pctbxsellitem";
+            this.pctbxsellitem.Size = new System.Drawing.Size(218, 135);
+            this.pctbxsellitem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctbxsellitem.TabIndex = 15;
+            this.pctbxsellitem.TabStop = false;
+            this.pctbxsellitem.Click += new System.EventHandler(this.pctbxsellitem_Click);
+            this.pctbxsellitem.MouseEnter += new System.EventHandler(this.pctbxsellitem_MouseEnter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::marketplace.Properties.Resources.plusblue_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(43, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -360,6 +386,17 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Item name";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
+            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(143, 88);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
@@ -404,6 +441,17 @@
             this.label11.Size = new System.Drawing.Size(61, 16);
             this.label11.TabIndex = 1;
             this.label11.Text = "Item name";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
+            this.pictureBox3.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(143, 88);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // panel5
             // 
@@ -450,6 +498,17 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Item name";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
+            this.pictureBox4.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(143, 88);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
@@ -495,39 +554,6 @@
             this.label17.TabIndex = 1;
             this.label17.Text = "Item name";
             // 
-            // pnlaccount
-            // 
-            this.pnlaccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlaccount.Controls.Add(this.btnlogout);
-            this.pnlaccount.Controls.Add(this.pnlhereclicked);
-            this.pnlaccount.Controls.Add(this.linklabelverify);
-            this.pnlaccount.Controls.Add(this.label23);
-            this.pnlaccount.Controls.Add(this.label22);
-            this.pnlaccount.Controls.Add(this.label21);
-            this.pnlaccount.Controls.Add(this.label20);
-            this.pnlaccount.Controls.Add(this.label19);
-            this.pnlaccount.Controls.Add(this.label18);
-            this.pnlaccount.Controls.Add(this.pictureBox6);
-            this.pnlaccount.Location = new System.Drawing.Point(74, 37);
-            this.pnlaccount.Name = "pnlaccount";
-            this.pnlaccount.Size = new System.Drawing.Size(644, 387);
-            this.pnlaccount.TabIndex = 18;
-            this.pnlaccount.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlaccount_Paint);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_27_092353_removebg_preview;
-            this.pictureBox6.Location = new System.Drawing.Point(22, 5);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(137, 119);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
-            this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
-            // 
             // pictureBox5
             // 
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -539,133 +565,38 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox4
+            // pnlaccount
             // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
-            this.pictureBox4.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(143, 88);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.pnlaccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlaccount.Controls.Add(this.btnlogout);
+            this.pnlaccount.Controls.Add(this.pnlhereclicked);
+            this.pnlaccount.Controls.Add(this.linklabelverify);
+            this.pnlaccount.Controls.Add(this.label23);
+            this.pnlaccount.Controls.Add(this.label22);
+            this.pnlaccount.Controls.Add(this.AccountContact);
+            this.pnlaccount.Controls.Add(this.AccountName);
+            this.pnlaccount.Controls.Add(this.label19);
+            this.pnlaccount.Controls.Add(this.label18);
+            this.pnlaccount.Controls.Add(this.pictureBox6);
+            this.pnlaccount.Location = new System.Drawing.Point(74, 37);
+            this.pnlaccount.Name = "pnlaccount";
+            this.pnlaccount.Size = new System.Drawing.Size(644, 387);
+            this.pnlaccount.TabIndex = 18;
+            this.pnlaccount.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlaccount_Paint);
             // 
-            // pictureBox3
+            // btnlogout
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(143, 88);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(143, 88);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pctbxsellitem
-            // 
-            this.pctbxsellitem.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_185333;
-            this.pctbxsellitem.Location = new System.Drawing.Point(34, 72);
-            this.pctbxsellitem.Name = "pctbxsellitem";
-            this.pctbxsellitem.Size = new System.Drawing.Size(218, 135);
-            this.pctbxsellitem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctbxsellitem.TabIndex = 15;
-            this.pctbxsellitem.TabStop = false;
-            this.pctbxsellitem.Click += new System.EventHandler(this.pctbxsellitem_Click);
-            this.pctbxsellitem.MouseEnter += new System.EventHandler(this.pctbxsellitem_MouseEnter);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::marketplace.Properties.Resources.plusblue_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(166, 6);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 24);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Name:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(165, 35);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 24);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Contact : ";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(238, 6);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(196, 24);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "Cielo Denise A. Corda";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(249, 35);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(120, 24);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "09667875446";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(166, 74);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(103, 20);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "not verified ? ";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(165, 104);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(180, 20);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "wanna get verified? click";
-            // 
-            // linklabelverify
-            // 
-            this.linklabelverify.AutoSize = true;
-            this.linklabelverify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linklabelverify.Location = new System.Drawing.Point(345, 104);
-            this.linklabelverify.Name = "linklabelverify";
-            this.linklabelverify.Size = new System.Drawing.Size(41, 20);
-            this.linklabelverify.TabIndex = 7;
-            this.linklabelverify.TabStop = true;
-            this.linklabelverify.Text = "here";
-            this.linklabelverify.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelverify_LinkClicked);
+            this.btnlogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(94)))), ((int)(((byte)(55)))));
+            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnlogout.Location = new System.Drawing.Point(554, 9);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(72, 23);
+            this.btnlogout.TabIndex = 9;
+            this.btnlogout.Text = "LOG OUT ";
+            this.btnlogout.UseVisualStyleBackColor = false;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // pnlhereclicked
             // 
@@ -682,55 +613,18 @@
             this.pnlhereclicked.Size = new System.Drawing.Size(337, 255);
             this.pnlhereclicked.TabIndex = 8;
             // 
-            // label24
+            // btnsubmitaccount
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(31, 9);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(43, 16);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Age :";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(31, 35);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(96, 16);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Date of Birth:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(31, 60);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(85, 16);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Nationality:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(31, 88);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(111, 16);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "Email address:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(31, 116);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(155, 16);
-            this.label28.TabIndex = 4;
-            this.label28.Text = "Insert valid id picture:";
+            this.btnsubmitaccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
+            this.btnsubmitaccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnsubmitaccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsubmitaccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnsubmitaccount.Location = new System.Drawing.Point(34, 227);
+            this.btnsubmitaccount.Name = "btnsubmitaccount";
+            this.btnsubmitaccount.Size = new System.Drawing.Size(152, 23);
+            this.btnsubmitaccount.TabIndex = 10;
+            this.btnsubmitaccount.Text = "Submit";
+            this.btnsubmitaccount.UseVisualStyleBackColor = false;
             // 
             // pictureBox7
             // 
@@ -745,32 +639,143 @@
             this.pictureBox7.MouseEnter += new System.EventHandler(this.pictureBox7_MouseEnter);
             this.pictureBox7.MouseLeave += new System.EventHandler(this.pictureBox7_MouseLeave);
             // 
-            // btnsubmitaccount
+            // label28
             // 
-            this.btnsubmitaccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
-            this.btnsubmitaccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnsubmitaccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsubmitaccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnsubmitaccount.Location = new System.Drawing.Point(34, 227);
-            this.btnsubmitaccount.Name = "btnsubmitaccount";
-            this.btnsubmitaccount.Size = new System.Drawing.Size(152, 23);
-            this.btnsubmitaccount.TabIndex = 10;
-            this.btnsubmitaccount.Text = "Submit";
-            this.btnsubmitaccount.UseVisualStyleBackColor = false;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(31, 116);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(155, 16);
+            this.label28.TabIndex = 4;
+            this.label28.Text = "Insert valid id picture:";
             // 
-            // btnlogout
+            // label27
             // 
-            this.btnlogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(94)))), ((int)(((byte)(55)))));
-            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnlogout.Location = new System.Drawing.Point(554, 9);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(72, 23);
-            this.btnlogout.TabIndex = 9;
-            this.btnlogout.Text = "LOG OUT ";
-            this.btnlogout.UseVisualStyleBackColor = false;
-            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(31, 88);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(111, 16);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Email address:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(31, 60);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(85, 16);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Nationality:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(31, 35);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(96, 16);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Date of Birth:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(31, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(43, 16);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Age :";
+            // 
+            // linklabelverify
+            // 
+            this.linklabelverify.AutoSize = true;
+            this.linklabelverify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklabelverify.Location = new System.Drawing.Point(345, 104);
+            this.linklabelverify.Name = "linklabelverify";
+            this.linklabelverify.Size = new System.Drawing.Size(41, 20);
+            this.linklabelverify.TabIndex = 7;
+            this.linklabelverify.TabStop = true;
+            this.linklabelverify.Text = "here";
+            this.linklabelverify.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelverify_LinkClicked);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(165, 104);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(180, 20);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "wanna get verified? click";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(166, 74);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(103, 20);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "not verified ? ";
+            // 
+            // AccountContact
+            // 
+            this.AccountContact.AutoSize = true;
+            this.AccountContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountContact.Location = new System.Drawing.Point(249, 35);
+            this.AccountContact.Name = "AccountContact";
+            this.AccountContact.Size = new System.Drawing.Size(120, 24);
+            this.AccountContact.TabIndex = 4;
+            this.AccountContact.Text = "09667875446";
+            this.AccountContact.Click += new System.EventHandler(this.AccountContact_Click);
+            // 
+            // AccountName
+            // 
+            this.AccountName.AutoSize = true;
+            this.AccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountName.Location = new System.Drawing.Point(238, 6);
+            this.AccountName.Name = "AccountName";
+            this.AccountName.Size = new System.Drawing.Size(196, 24);
+            this.AccountName.TabIndex = 3;
+            this.AccountName.Text = "Cielo Denise A. Corda";
+            this.AccountName.Click += new System.EventHandler(this.AccountName_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(165, 35);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 24);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Contact : ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(166, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 24);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Name:";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_27_092353_removebg_preview;
+            this.pictureBox6.Location = new System.Drawing.Point(22, 5);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(137, 119);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
             // 
             // Sellit_form
             // 
@@ -794,26 +799,26 @@
             this.panel1.PerformLayout();
             this.pnlsellitem.ResumeLayout(false);
             this.pnlsellitem.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.pnlaccount.ResumeLayout(false);
-            this.pnlaccount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbxsellitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.pnlaccount.ResumeLayout(false);
+            this.pnlaccount.PerformLayout();
             this.pnlhereclicked.ResumeLayout(false);
             this.pnlhereclicked.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -862,8 +867,8 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel pnlaccount;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label AccountContact;
+        private System.Windows.Forms.Label AccountName;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.LinkLabel linklabelverify;

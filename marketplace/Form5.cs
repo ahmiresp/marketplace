@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO; // Required for handling file paths
+using System.Data.SqlClient;
 
 namespace marketplace
 {
@@ -21,13 +22,52 @@ namespace marketplace
             SetPricePlaceholder(); // Set the initial placeholder text for txtboxprice
             SetLocationPlaceholder(); // Set the initial placeholder text for txtboxlocation
                                       // Assign mouse events for cursor change
+            FetchAccountDetails();
             pctbxsellitem.MouseEnter += pctbxsellitem_MouseEnter;
             pctbxsellitem.MouseLeave += pctbxsellitem_MouseLeave;
             pnlaccount.Visible = false;
             pnlhereclicked.Visible = false;
         }
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
 
         // Placeholder for richTextBox1
+
+        private void FetchAccountDetails()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;"))
+                {
+                    conn.Open();
+                    string query = "SELECT username, contact FROM signup_form WHERE username = @username";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // 🆕 Use the stored username from loginForm
+                        cmd.Parameters.AddWithValue("@username", loginForm.LoggedInUser);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read()) // If user exists, update labels
+                            {
+                                AccountName.Text = reader["username"].ToString();
+                                AccountContact.Text = reader["contact"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("User not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void SetPlaceholder()
         {
             if (string.IsNullOrWhiteSpace(richTextBox1.Text))
@@ -153,6 +193,8 @@ namespace marketplace
         private void pctbxsellitem_MouseEnter(object sender, EventArgs e)
         {
             pctbxsellitem.Cursor = Cursors.Hand; // Change cursor to hand when hovering
+
+           
         }
 
         private void pctbxsellitem_MouseLeave(object sender, EventArgs e)
@@ -185,6 +227,7 @@ namespace marketplace
         {
             pnlaccount.Visible = true;
             pnlaccount.BringToFront();
+            FetchAccountDetails(); // 🆕 Fetch details when button is clicked
         }
 
         private void linklabelverify_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -215,6 +258,7 @@ namespace marketplace
                 }
             }
         }
+       
         private Image originalImage6;
         private Image originalImage7;
 
@@ -278,7 +322,7 @@ namespace marketplace
                 }
             }
         }
-
+        
         private void pnlsellitem_Paint(object sender, PaintEventArgs e)
         {
 
@@ -295,6 +339,77 @@ namespace marketplace
                 form1.Show();
                 this.Hide(); 
             }
+        }
+
+        private void txtboxprice_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtboxlocation_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdditem_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;";
+
+            // Get values from textboxes
+            string itemName = txtItemName.Text;
+            string price = txtboxprice.Text;
+            string location = txtboxlocation.Text;
+            string description = richTextBox1.Text;
+
+            // Ensure all fields are filled
+            if (string.IsNullOrWhiteSpace(itemName) || string.IsNullOrWhiteSpace(price) ||
+                string.IsNullOrWhiteSpace(location) || string.IsNullOrWhiteSpace(description))
+            {
+                MessageBox.Show("Please fill in all fields before adding the item.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO items (item_name, price, location, description) VALUES (@item_name, @price, @location, @description)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@item_name", itemName);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        cmd.Parameters.AddWithValue("@location", location);
+                        cmd.Parameters.AddWithValue("@description", description);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to add item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AccountName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AccountContact_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

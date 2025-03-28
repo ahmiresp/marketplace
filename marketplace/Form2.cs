@@ -28,6 +28,8 @@ namespace marketplace
             this.Hide();
         }
 
+        public static string LoggedInUser { get; private set; } // Store logged-in username
+
         private void btnlogin_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -43,21 +45,19 @@ namespace marketplace
                 isValid = false;
             }
 
-            // ✅ Password Validation
             if (string.IsNullOrWhiteSpace(user_password))
             {
                 errorProvider2.SetError(txtloginbxpassword, "Password cannot be empty.");
                 isValid = false;
             }
-            if (!isValid) 
-                return;
-            // 🚨 If any validation fails, stop execution
+
+            if (!isValid) return; // Stop execution if validation fails
+
             try
             {
                 conn.Open();
-
-                // Check if username exists
                 string query = "SELECT password FROM signup_form WHERE username = @username";
+
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
@@ -65,25 +65,26 @@ namespace marketplace
 
                     if (result == null)
                     {
-                        // 🚨 Username does not exist
                         errorProvider1.SetError(txtloginbxusername, "Username not found.");
                     }
                     else
                     {
-                        string storedHashedPassword = result.ToString(); // Get hashed password from DB
-                        string hashedInputPassword = HashPassword(user_password); // Hash entered password
+                        string storedHashedPassword = result.ToString();
+                        string hashedInputPassword = HashPassword(user_password);
 
                         if (storedHashedPassword == hashedInputPassword)
                         {
                             // ✅ Login Successful
                             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            LoggedInUser = username; // 🆕 Store username for later use
+
                             BROWSE_FORM browse_form = new BROWSE_FORM();
                             browse_form.Show();
                             this.Hide();
                         }
                         else
                         {
-                            // 🚨 Incorrect password
                             MessageBox.Show("Invalid credentials. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
@@ -98,7 +99,8 @@ namespace marketplace
                 conn.Close();
             }
         }
-    
+
+
 
         // Hash the password using SHA-256
         private string HashPassword(string password)
