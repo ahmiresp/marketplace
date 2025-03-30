@@ -47,16 +47,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -85,14 +75,21 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.flpItemsContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pcbxitempic = new System.Windows.Forms.PictureBox();
+            this.lblitemname = new System.Windows.Forms.Label();
+            this.lblprice = new System.Windows.Forms.Label();
+            this.lbllocation = new System.Windows.Forms.Label();
+            this.pnlitems1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnlsellitem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbxsellitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel6.SuspendLayout();
@@ -101,6 +98,10 @@
             this.pnlhereclicked.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxitempic)).BeginInit();
+            this.pnlitems1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -340,118 +341,6 @@
             this.label5.Size = new System.Drawing.Size(237, 24);
             this.label5.TabIndex = 14;
             this.label5.Text = "MONITOR ITEM SALES";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(44, 485);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(158, 190);
-            this.panel3.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(4, 145);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 16);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Location";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(4, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 16);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Price";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(3, 94);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Item name";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(143, 88);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(222, 485);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(158, 190);
-            this.panel4.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(4, 145);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 16);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Location";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(4, 119);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 16);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Price";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(3, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 16);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Item name";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(143, 88);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
             // 
             // panel5
             // 
@@ -777,20 +666,143 @@
             this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
             this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
             // 
+            // flpItemsContainer
+            // 
+            this.flpItemsContainer.AutoScroll = true;
+            this.flpItemsContainer.Location = new System.Drawing.Point(28, 477);
+            this.flpItemsContainer.Name = "flpItemsContainer";
+            this.flpItemsContainer.Size = new System.Drawing.Size(713, 218);
+            this.flpItemsContainer.TabIndex = 19;
+            this.flpItemsContainer.WrapContents = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
+            this.pictureBox3.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(143, 88);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(3, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 16);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Item name";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(4, 119);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 16);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Price";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(4, 145);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 16);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Location";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Location = new System.Drawing.Point(222, 485);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(158, 190);
+            this.panel4.TabIndex = 16;
+            // 
+            // pcbxitempic
+            // 
+            this.pcbxitempic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcbxitempic.Image = global::marketplace.Properties.Resources.Screenshot_2025_03_26_235316;
+            this.pcbxitempic.Location = new System.Drawing.Point(7, 3);
+            this.pcbxitempic.Name = "pcbxitempic";
+            this.pcbxitempic.Size = new System.Drawing.Size(143, 88);
+            this.pcbxitempic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbxitempic.TabIndex = 0;
+            this.pcbxitempic.TabStop = false;
+            // 
+            // lblitemname
+            // 
+            this.lblitemname.AutoSize = true;
+            this.lblitemname.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblitemname.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblitemname.Location = new System.Drawing.Point(3, 94);
+            this.lblitemname.Name = "lblitemname";
+            this.lblitemname.Size = new System.Drawing.Size(61, 16);
+            this.lblitemname.TabIndex = 1;
+            this.lblitemname.Text = "Item name";
+            // 
+            // lblprice
+            // 
+            this.lblprice.AutoSize = true;
+            this.lblprice.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprice.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblprice.Location = new System.Drawing.Point(4, 119);
+            this.lblprice.Name = "lblprice";
+            this.lblprice.Size = new System.Drawing.Size(33, 16);
+            this.lblprice.TabIndex = 2;
+            this.lblprice.Text = "Price";
+            // 
+            // lbllocation
+            // 
+            this.lbllocation.AutoSize = true;
+            this.lbllocation.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllocation.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbllocation.Location = new System.Drawing.Point(4, 145);
+            this.lbllocation.Name = "lbllocation";
+            this.lbllocation.Size = new System.Drawing.Size(54, 16);
+            this.lbllocation.TabIndex = 3;
+            this.lbllocation.Text = "Location";
+            // 
+            // pnlitems1
+            // 
+            this.pnlitems1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
+            this.pnlitems1.Controls.Add(this.lbllocation);
+            this.pnlitems1.Controls.Add(this.lblprice);
+            this.pnlitems1.Controls.Add(this.lblitemname);
+            this.pnlitems1.Controls.Add(this.pcbxitempic);
+            this.pnlitems1.Location = new System.Drawing.Point(44, 485);
+            this.pnlitems1.Name = "pnlitems1";
+            this.pnlitems1.Size = new System.Drawing.Size(158, 190);
+            this.pnlitems1.TabIndex = 15;
+            this.pnlitems1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlitems1_Paint);
+            // 
             // Sellit_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(753, 707);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.flpItemsContainer);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlitems1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlaccount);
             this.Controls.Add(this.pnlsellitem);
+            this.Controls.Add(this.pnlaccount);
             this.Name = "Sellit_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "                                      ";
@@ -801,12 +813,6 @@
             this.pnlsellitem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbxsellitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -819,6 +825,12 @@
             this.pnlhereclicked.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxitempic)).EndInit();
+            this.pnlitems1.ResumeLayout(false);
+            this.pnlitems1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -845,16 +857,6 @@
         private System.Windows.Forms.TextBox txtboxprice;
         private System.Windows.Forms.Button btnAdditem;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -883,5 +885,16 @@
         private System.Windows.Forms.Button btnsubmitaccount;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button btnlogout;
+        private System.Windows.Forms.FlowLayoutPanel flpItemsContainer;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pcbxitempic;
+        private System.Windows.Forms.Label lblitemname;
+        private System.Windows.Forms.Label lblprice;
+        private System.Windows.Forms.Label lbllocation;
+        private System.Windows.Forms.Panel pnlitems1;
     }
 }
