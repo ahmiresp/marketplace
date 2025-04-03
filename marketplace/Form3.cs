@@ -16,7 +16,9 @@ namespace marketplace
     {
         public signupForm()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            this.MinimumSize = new Size(336, 343);
+            this.MaximumSize = new Size(500, 400);
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
 

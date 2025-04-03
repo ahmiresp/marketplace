@@ -35,6 +35,7 @@
             this.btnsellit = new System.Windows.Forms.Button();
             this.btnbrowes = new System.Windows.Forms.Button();
             this.pnlaccount = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.btnlogout = new System.Windows.Forms.Button();
             this.pnlhereclicked = new System.Windows.Forms.Panel();
             this.btnsubmitaccount = new System.Windows.Forms.Button();
@@ -49,22 +50,27 @@
             this.label22 = new System.Windows.Forms.Label();
             this.AccountContact = new System.Windows.Forms.Label();
             this.AccountName = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.catpopup = new System.Windows.Forms.Panel();
-            this.btncatelectronics = new System.Windows.Forms.Button();
-            this.btncatappliances = new System.Windows.Forms.Button();
-            this.btncatclothes = new System.Windows.Forms.Button();
-            this.btncatshoes = new System.Windows.Forms.Button();
-            this.btncatbags = new System.Windows.Forms.Button();
             this.btncatfurnitures = new System.Windows.Forms.Button();
+            this.btncatbags = new System.Windows.Forms.Button();
+            this.btncatshoes = new System.Windows.Forms.Button();
+            this.btncatclothes = new System.Windows.Forms.Button();
+            this.btncatappliances = new System.Windows.Forms.Button();
+            this.btncatelectronics = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.flpAllItemsContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlaccount.SuspendLayout();
             this.pnlhereclicked.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.catpopup.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +84,7 @@
             this.panel1.ForeColor = System.Drawing.Color.Snow;
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(706, 31);
+            this.panel1.Size = new System.Drawing.Size(1070, 31);
             this.panel1.TabIndex = 10;
             // 
             // BTNCHAT
@@ -98,7 +104,7 @@
             this.btnAccount.AutoSize = true;
             this.btnAccount.BackColor = System.Drawing.Color.Transparent;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAccount.Location = new System.Drawing.Point(598, 3);
+            this.btnAccount.Location = new System.Drawing.Point(959, 3);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(108, 32);
             this.btnAccount.TabIndex = 3;
@@ -135,11 +141,12 @@
             // btnbrowes
             // 
             this.btnbrowes.AutoSize = true;
-            this.btnbrowes.BackColor = System.Drawing.Color.Transparent;
+            this.btnbrowes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(222)))));
             this.btnbrowes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnbrowes.Location = new System.Drawing.Point(13, 0);
+            this.btnbrowes.ForeColor = System.Drawing.Color.Black;
+            this.btnbrowes.Location = new System.Drawing.Point(12, 2);
             this.btnbrowes.Name = "btnbrowes";
-            this.btnbrowes.Size = new System.Drawing.Size(90, 32);
+            this.btnbrowes.Size = new System.Drawing.Size(91, 28);
             this.btnbrowes.TabIndex = 0;
             this.btnbrowes.Text = "BROWSE";
             this.btnbrowes.UseVisualStyleBackColor = false;
@@ -156,10 +163,20 @@
             this.pnlaccount.Controls.Add(this.AccountName);
             this.pnlaccount.Controls.Add(this.label18);
             this.pnlaccount.Controls.Add(this.pictureBox6);
-            this.pnlaccount.Location = new System.Drawing.Point(32, 35);
+            this.pnlaccount.Location = new System.Drawing.Point(423, 35);
             this.pnlaccount.Name = "pnlaccount";
             this.pnlaccount.Size = new System.Drawing.Size(644, 387);
             this.pnlaccount.TabIndex = 19;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(165, 35);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 24);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Contact : ";
             // 
             // btnlogout
             // 
@@ -315,16 +332,6 @@
             this.AccountName.TabIndex = 3;
             this.AccountName.Text = "Cielo Denise A. Corda";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(165, 35);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 24);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Contact : ";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -356,11 +363,71 @@
             this.catpopup.Controls.Add(this.btncatclothes);
             this.catpopup.Controls.Add(this.btncatappliances);
             this.catpopup.Controls.Add(this.btncatelectronics);
-            this.catpopup.Location = new System.Drawing.Point(178, 35);
+            this.catpopup.Location = new System.Drawing.Point(181, 35);
             this.catpopup.Name = "catpopup";
             this.catpopup.Size = new System.Drawing.Size(200, 245);
             this.catpopup.TabIndex = 10;
             this.catpopup.Paint += new System.Windows.Forms.PaintEventHandler(this.catpopup_Paint);
+            // 
+            // btncatfurnitures
+            // 
+            this.btncatfurnitures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btncatfurnitures.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncatfurnitures.Location = new System.Drawing.Point(20, 205);
+            this.btncatfurnitures.Name = "btncatfurnitures";
+            this.btncatfurnitures.Size = new System.Drawing.Size(157, 31);
+            this.btncatfurnitures.TabIndex = 5;
+            this.btncatfurnitures.Text = "Furnitures";
+            this.btncatfurnitures.UseVisualStyleBackColor = true;
+            this.btncatfurnitures.Click += new System.EventHandler(this.btncatfurnitures_Click);
+            // 
+            // btncatbags
+            // 
+            this.btncatbags.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btncatbags.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncatbags.Location = new System.Drawing.Point(20, 168);
+            this.btncatbags.Name = "btncatbags";
+            this.btncatbags.Size = new System.Drawing.Size(157, 31);
+            this.btncatbags.TabIndex = 4;
+            this.btncatbags.Text = "Bags";
+            this.btncatbags.UseVisualStyleBackColor = true;
+            this.btncatbags.Click += new System.EventHandler(this.btncatbags_Click);
+            // 
+            // btncatshoes
+            // 
+            this.btncatshoes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btncatshoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncatshoes.Location = new System.Drawing.Point(20, 131);
+            this.btncatshoes.Name = "btncatshoes";
+            this.btncatshoes.Size = new System.Drawing.Size(157, 31);
+            this.btncatshoes.TabIndex = 3;
+            this.btncatshoes.Text = "Shoes";
+            this.btncatshoes.UseVisualStyleBackColor = true;
+            this.btncatshoes.Click += new System.EventHandler(this.btncatshoes_Click);
+            // 
+            // btncatclothes
+            // 
+            this.btncatclothes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btncatclothes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncatclothes.Location = new System.Drawing.Point(20, 94);
+            this.btncatclothes.Name = "btncatclothes";
+            this.btncatclothes.Size = new System.Drawing.Size(157, 31);
+            this.btncatclothes.TabIndex = 2;
+            this.btncatclothes.Text = "Clothes";
+            this.btncatclothes.UseVisualStyleBackColor = true;
+            this.btncatclothes.Click += new System.EventHandler(this.btncatclothes_Click);
+            // 
+            // btncatappliances
+            // 
+            this.btncatappliances.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btncatappliances.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncatappliances.Location = new System.Drawing.Point(20, 57);
+            this.btncatappliances.Name = "btncatappliances";
+            this.btncatappliances.Size = new System.Drawing.Size(157, 31);
+            this.btncatappliances.TabIndex = 1;
+            this.btncatappliances.Text = "Appliances";
+            this.btncatappliances.UseVisualStyleBackColor = true;
+            this.btncatappliances.Click += new System.EventHandler(this.btncatappliances_Click);
             // 
             // btncatelectronics
             // 
@@ -375,70 +442,67 @@
             this.btncatelectronics.UseVisualStyleBackColor = false;
             this.btncatelectronics.Click += new System.EventHandler(this.btncatelectronics_Click);
             // 
-            // btncatappliances
+            // panel2
             // 
-            this.btncatappliances.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncatappliances.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncatappliances.Location = new System.Drawing.Point(20, 57);
-            this.btncatappliances.Name = "btncatappliances";
-            this.btncatappliances.Size = new System.Drawing.Size(157, 31);
-            this.btncatappliances.TabIndex = 1;
-            this.btncatappliances.Text = "Appliances";
-            this.btncatappliances.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Controls.Add(this.flpAllItemsContainer);
+            this.panel2.Controls.Add(this.txtSearch);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(0, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1070, 601);
+            this.panel2.TabIndex = 20;
             // 
-            // btncatclothes
+            // label7
             // 
-            this.btncatclothes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncatclothes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncatclothes.Location = new System.Drawing.Point(20, 94);
-            this.btncatclothes.Name = "btncatclothes";
-            this.btncatclothes.Size = new System.Drawing.Size(157, 31);
-            this.btncatclothes.TabIndex = 2;
-            this.btncatclothes.Text = "Clothes";
-            this.btncatclothes.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(52, 55);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(306, 28);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "What do you fancy today?";
             // 
-            // btncatshoes
+            // txtSearch
             // 
-            this.btncatshoes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncatshoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncatshoes.Location = new System.Drawing.Point(20, 131);
-            this.btncatshoes.Name = "btncatshoes";
-            this.btncatshoes.Size = new System.Drawing.Size(157, 31);
-            this.btncatshoes.TabIndex = 3;
-            this.btncatshoes.Text = "Shoes";
-            this.btncatshoes.UseVisualStyleBackColor = true;
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSearch.Location = new System.Drawing.Point(397, 65);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(295, 20);
+            this.txtSearch.TabIndex = 7;
             // 
-            // btncatbags
+            // flpAllItemsContainer
             // 
-            this.btncatbags.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncatbags.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncatbags.Location = new System.Drawing.Point(20, 168);
-            this.btncatbags.Name = "btncatbags";
-            this.btncatbags.Size = new System.Drawing.Size(157, 31);
-            this.btncatbags.TabIndex = 4;
-            this.btncatbags.Text = "Bags";
-            this.btncatbags.UseVisualStyleBackColor = true;
+            this.flpAllItemsContainer.AutoScroll = true;
+            this.flpAllItemsContainer.BackColor = System.Drawing.Color.White;
+            this.flpAllItemsContainer.Location = new System.Drawing.Point(42, 105);
+            this.flpAllItemsContainer.Name = "flpAllItemsContainer";
+            this.flpAllItemsContainer.Size = new System.Drawing.Size(1007, 461);
+            this.flpAllItemsContainer.TabIndex = 8;
+            this.flpAllItemsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.flpAllItemsContainer_Paint);
             // 
-            // btncatfurnitures
+            // btnSearch
             // 
-            this.btncatfurnitures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncatfurnitures.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncatfurnitures.Location = new System.Drawing.Point(20, 205);
-            this.btncatfurnitures.Name = "btncatfurnitures";
-            this.btncatfurnitures.Size = new System.Drawing.Size(157, 31);
-            this.btncatfurnitures.TabIndex = 5;
-            this.btncatfurnitures.Text = "Furnitures";
-            this.btncatfurnitures.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(717, 63);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // BROWSE_FORM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(705, 564);
+            this.ClientSize = new System.Drawing.Size(1069, 636);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.catpopup);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlaccount);
-            this.Controls.Add(this.catpopup);
             this.Name = "BROWSE_FORM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
@@ -452,6 +516,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.catpopup.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -489,5 +555,10 @@
         private System.Windows.Forms.Button btncatclothes;
         private System.Windows.Forms.Button btncatappliances;
         private System.Windows.Forms.Button btncatfurnitures;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.FlowLayoutPanel flpAllItemsContainer;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

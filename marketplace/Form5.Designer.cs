@@ -115,6 +115,7 @@
             this.pnlhereclicked.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.flpItemsContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxitempic)).BeginInit();
@@ -134,7 +135,7 @@
             this.panel1.ForeColor = System.Drawing.Color.Snow;
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(753, 31);
+            this.panel1.Size = new System.Drawing.Size(1096, 31);
             this.panel1.TabIndex = 11;
             // 
             // BTNCHAT
@@ -154,7 +155,7 @@
             this.btnAccount.AutoSize = true;
             this.btnAccount.BackColor = System.Drawing.Color.Transparent;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAccount.Location = new System.Drawing.Point(614, 0);
+            this.btnAccount.Location = new System.Drawing.Point(953, -1);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(105, 32);
             this.btnAccount.TabIndex = 3;
@@ -199,6 +200,7 @@
             this.btnbrowes.TabIndex = 0;
             this.btnbrowes.Text = "BROWSE";
             this.btnbrowes.UseVisualStyleBackColor = false;
+            this.btnbrowes.Click += new System.EventHandler(this.btnbrowes_Click);
             // 
             // richTextBox1
             // 
@@ -230,7 +232,7 @@
             this.pnlsellitem.Controls.Add(this.pictureBox1);
             this.pnlsellitem.Controls.Add(this.label1);
             this.pnlsellitem.Controls.Add(this.richTextBox1);
-            this.pnlsellitem.Location = new System.Drawing.Point(74, 38);
+            this.pnlsellitem.Location = new System.Drawing.Point(255, 38);
             this.pnlsellitem.Name = "pnlsellitem";
             this.pnlsellitem.Size = new System.Drawing.Size(644, 386);
             this.pnlsellitem.TabIndex = 13;
@@ -403,7 +405,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(80, 28);
+            this.label1.Location = new System.Drawing.Point(82, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 29);
             this.label1.TabIndex = 13;
@@ -422,11 +424,12 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Location = new System.Drawing.Point(397, 485);
+            this.panel5.Location = new System.Drawing.Point(331, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(158, 190);
             this.panel5.TabIndex = 16;
@@ -482,7 +485,7 @@
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.label17);
             this.panel6.Controls.Add(this.pictureBox5);
-            this.panel6.Location = new System.Drawing.Point(570, 485);
+            this.panel6.Location = new System.Drawing.Point(156, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(158, 190);
             this.panel6.TabIndex = 17;
@@ -534,8 +537,8 @@
             // pnlaccount
             // 
             this.pnlaccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlaccount.Controls.Add(this.btnlogout);
             this.pnlaccount.Controls.Add(this.pnlhereclicked);
+            this.pnlaccount.Controls.Add(this.btnlogout);
             this.pnlaccount.Controls.Add(this.linklabelverify);
             this.pnlaccount.Controls.Add(this.label23);
             this.pnlaccount.Controls.Add(this.label22);
@@ -544,7 +547,7 @@
             this.pnlaccount.Controls.Add(this.label19);
             this.pnlaccount.Controls.Add(this.label18);
             this.pnlaccount.Controls.Add(this.pictureBox6);
-            this.pnlaccount.Location = new System.Drawing.Point(74, 37);
+            this.pnlaccount.Location = new System.Drawing.Point(255, 37);
             this.pnlaccount.Name = "pnlaccount";
             this.pnlaccount.Size = new System.Drawing.Size(644, 387);
             this.pnlaccount.TabIndex = 18;
@@ -747,9 +750,12 @@
             // flpItemsContainer
             // 
             this.flpItemsContainer.AutoScroll = true;
-            this.flpItemsContainer.Location = new System.Drawing.Point(28, 477);
+            this.flpItemsContainer.Controls.Add(this.panel4);
+            this.flpItemsContainer.Controls.Add(this.pnlitems1);
+            this.flpItemsContainer.Controls.Add(this.panel5);
+            this.flpItemsContainer.Location = new System.Drawing.Point(55, 536);
             this.flpItemsContainer.Name = "flpItemsContainer";
-            this.flpItemsContainer.Size = new System.Drawing.Size(713, 218);
+            this.flpItemsContainer.Size = new System.Drawing.Size(951, 218);
             this.flpItemsContainer.TabIndex = 19;
             this.flpItemsContainer.WrapContents = false;
             // 
@@ -800,11 +806,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
-            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(222, 485);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(158, 190);
             this.panel4.TabIndex = 16;
@@ -860,7 +866,7 @@
             this.pnlitems1.Controls.Add(this.lblprice);
             this.pnlitems1.Controls.Add(this.lblitemname);
             this.pnlitems1.Controls.Add(this.pcbxitempic);
-            this.pnlitems1.Location = new System.Drawing.Point(44, 485);
+            this.pnlitems1.Location = new System.Drawing.Point(167, 3);
             this.pnlitems1.Name = "pnlitems1";
             this.pnlitems1.Size = new System.Drawing.Size(158, 190);
             this.pnlitems1.TabIndex = 15;
@@ -879,9 +885,9 @@
             this.pnlitemsalesdescription.Controls.Add(this.btnedititem);
             this.pnlitemsalesdescription.Controls.Add(this.label6);
             this.pnlitemsalesdescription.Controls.Add(this.pctbxitemclk);
-            this.pnlitemsalesdescription.Location = new System.Drawing.Point(74, 38);
+            this.pnlitemsalesdescription.Location = new System.Drawing.Point(255, 38);
             this.pnlitemsalesdescription.Name = "pnlitemsalesdescription";
-            this.pnlitemsalesdescription.Size = new System.Drawing.Size(644, 385);
+            this.pnlitemsalesdescription.Size = new System.Drawing.Size(644, 382);
             this.pnlitemsalesdescription.TabIndex = 20;
             // 
             // btnSaveChanges
@@ -984,14 +990,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(753, 707);
-            this.Controls.Add(this.flpItemsContainer);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.pnlitems1);
+            this.ClientSize = new System.Drawing.Size(1069, 1001);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flpItemsContainer);
             this.Controls.Add(this.pnlitemsalesdescription);
             this.Controls.Add(this.pnlsellitem);
             this.Controls.Add(this.pnlaccount);
@@ -1018,6 +1020,7 @@
             this.pnlhereclicked.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.flpItemsContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

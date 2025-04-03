@@ -42,6 +42,9 @@ namespace marketplace
             pctbxsellitem.MouseLeave += pctbxsellitem_MouseLeave;
             pnlaccount.Visible = false;
             pnlhereclicked.Visible = false;
+
+            this.MinimumSize = new Size(1085, 675);
+            this.MaximumSize = new Size(1200, 800);
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;");
 
@@ -847,6 +850,13 @@ namespace marketplace
                     }
                 }
             }
+        }
+
+        private void btnbrowes_Click(object sender, EventArgs e)
+        {
+            BROWSE_FORM browse = new BROWSE_FORM();
+            browse.Show();
+            this.Hide();
         }
     }
 }
