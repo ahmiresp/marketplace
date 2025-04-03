@@ -16,6 +16,18 @@ namespace marketplace
 
     {
 
+        class ItemDetails
+        {
+            public int Id { get; set; }  // ✅ Add Id to track items
+            public string ItemName { get; set; }
+            public string Price { get; set; }
+            public string Location { get; set; }
+            public string Description { get; set; }
+            public byte[] ItemImage { get; set; }
+            public string Category { get; set; }  // ✅ New field for Category
+        }
+
+
         public Sellit_form()
         {
             InitializeComponent();
@@ -192,6 +204,17 @@ namespace marketplace
             SetItemNamePlaceholder();
             SetPricePlaceholder();
             SetLocationPlaceholder();
+            PopulateCategoryDropdowns();
+            txtItemNameDesc.Enabled = false;
+            txtPriceDesc.Enabled = false;
+            txtLocationDesc.Enabled = false;
+            richTextBox2.Enabled = false;
+            cmbCategoryDesc.Enabled = false;
+            pctbxitemclk.Enabled = false;
+            pctbxitemclk.Enabled = false;
+
+            // 🔹 Disable "Save Changes" button initially
+            btnSaveChanges.Enabled = false;
         }
         private void pctbxsellitem_MouseEnter(object sender, EventArgs e)
         {
@@ -354,26 +377,30 @@ namespace marketplace
 
         }
 
+
+
+
+
+
         private void btnAdditem_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;";
 
-            // Get values from textboxes
             string itemName = txtItemName.Text;
             string price = txtboxprice.Text;
             string location = txtboxlocation.Text;
             string description = richTextBox1.Text;
-            string loggedInUser = loginForm.LoggedInUser; // Get the logged-in username
+            string category = cmbCategory.SelectedItem?.ToString(); // Get category from combobox
+            string loggedInUser = loginForm.LoggedInUser;
 
-            // Ensure all fields are filled
             if (string.IsNullOrWhiteSpace(itemName) || string.IsNullOrWhiteSpace(price) ||
-                string.IsNullOrWhiteSpace(location) || string.IsNullOrWhiteSpace(description) || pctbxsellitem.Image == null)
+                string.IsNullOrWhiteSpace(location) || string.IsNullOrWhiteSpace(description) ||
+                string.IsNullOrWhiteSpace(category) || pctbxsellitem.Image == null)
             {
                 MessageBox.Show("Please fill in all fields and select an image before adding the item.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Convert image to byte array
             byte[] imageBytes;
             using (MemoryStream ms = new MemoryStream())
             {
@@ -386,8 +413,8 @@ namespace marketplace
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO items (item_name, price, location, description, username, item_image) " +
-                                   "VALUES (@item_name, @price, @location, @description, @username, @item_image)";
+                    string query = "INSERT INTO items (item_name, price, location, description, username, item_image, category) " +
+                                   "VALUES (@item_name, @price, @location, @description, @username, @item_image, @category)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -397,22 +424,21 @@ namespace marketplace
                         cmd.Parameters.AddWithValue("@description", description);
                         cmd.Parameters.AddWithValue("@username", loggedInUser);
                         cmd.Parameters.AddWithValue("@item_image", imageBytes);
+                        cmd.Parameters.AddWithValue("@category", category);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // ✅ Refresh the item list immediately
                             LoadUserItems();
 
-                            // ✅ Clear input fields
                             txtItemName.Text = "";
                             txtboxprice.Text = "";
                             txtboxlocation.Text = "";
                             richTextBox1.Text = "";
-                            pctbxsellitem.Image = Properties.Resources.Screenshot_2025_03_26_185333;  // Clear image
+                            cmbCategory.SelectedIndex = -1; // Reset combobox
+                            pctbxsellitem.Image = Properties.Resources.Screenshot_2025_03_26_185333;
                         }
                         else
                         {
@@ -428,10 +454,18 @@ namespace marketplace
         }
 
 
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
             LoadUserItems(); // Call LoadUserItems when form loads
+            pnlitemsalesdescription.Visible = false;
         }
+
+
+
+
+
+
 
 
         private void LoadUserItems()
@@ -444,7 +478,7 @@ namespace marketplace
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT item_name, price, location, item_image FROM items WHERE username = @username";
+                    string query = "SELECT id, item_name, price, location, description, item_image, category FROM items WHERE username = @username";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -452,24 +486,30 @@ namespace marketplace
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            flpItemsContainer.Controls.Clear(); // Clear old items
+                            flpItemsContainer.Controls.Clear();
 
                             while (reader.Read())
                             {
+                                int itemId = Convert.ToInt32(reader["id"]);
                                 string itemName = reader["item_name"].ToString();
                                 string price = reader["price"].ToString();
                                 string location = reader["location"].ToString();
+                                string description = reader["description"].ToString();
+                                string category = reader["category"].ToString();
                                 byte[] imageBytes = reader["item_image"] as byte[];
+
+                                // ✅ Print fetched data in console (for debugging)
+                                Console.WriteLine($"Item Loaded - ID: {itemId}, Name: {itemName}, Price: {price}, Location: {location}, Category: {category}");
 
                                 // Create a new panel for each item
                                 Panel itemPanel = new Panel
                                 {
                                     Size = pnlitems1.Size,
                                     BorderStyle = pnlitems1.BorderStyle,
-                                    BackColor = pnlitems1.BackColor
+                                    BackColor = pnlitems1.BackColor,
+                                    Cursor = Cursors.Hand
                                 };
 
-                                // Convert byte array to image
                                 PictureBox pbItem = new PictureBox
                                 {
                                     Size = new Size(140, 70),
@@ -486,21 +526,35 @@ namespace marketplace
                                 }
                                 else
                                 {
-                                    pbItem.Image = Properties.Resources.Screenshot_2025_03_26_185333; // Default image
+                                    pbItem.Image = Properties.Resources.Screenshot_2025_03_26_185333;
                                 }
 
-                                // Add Labels for item details
                                 Label lblItemName = new Label { Text = "Item: " + itemName, AutoSize = true, Location = new Point(10, 90) };
                                 Label lblPrice = new Label { Text = "Price: " + price, AutoSize = true, Location = new Point(10, 110) };
                                 Label lblLocation = new Label { Text = "Location: " + location, AutoSize = true, Location = new Point(10, 130) };
+                                Label lblCategory = new Label { Text = "Category: " + category, AutoSize = true, Location = new Point(10, 150) };
 
-                                // Add controls to the panel
+                                // ✅ Store item details inside the Panel's Tag property
+                                itemPanel.Tag = new ItemDetails
+                                {
+                                    Id = itemId,
+                                    ItemName = itemName,
+                                    Price = price,
+                                    Location = location,
+                                    Description = description,
+                                    Category = category,
+                                    ItemImage = imageBytes
+                                };
+
+                                // ✅ Add click event to the panel
+                                itemPanel.Click += ItemPanel_Click;
+
                                 itemPanel.Controls.Add(pbItem);
                                 itemPanel.Controls.Add(lblItemName);
                                 itemPanel.Controls.Add(lblPrice);
                                 itemPanel.Controls.Add(lblLocation);
+                                itemPanel.Controls.Add(lblCategory);
 
-                                // Add the panel to the FlowLayoutPanel
                                 flpItemsContainer.Controls.Add(itemPanel);
                             }
 
@@ -524,6 +578,88 @@ namespace marketplace
 
 
 
+
+
+
+
+        private int selectedItemID = -1; // Store the selected item's ID
+
+        private void ItemPanel_Click(object sender, EventArgs e)
+        {
+            Panel clickedPanel = sender as Panel;
+
+            if (clickedPanel != null && clickedPanel.Tag is ItemDetails item)
+            {
+                // ✅ Debugging to confirm event is triggered
+                Console.WriteLine($"Clicked Item - ID: {item.Id}, Name: {item.ItemName}, Category: {item.Category}");
+
+                // ✅ Bring pnlitemsalesdescription to the front
+                pnlitemsalesdescription.Visible = true;
+                pnlitemsalesdescription.BringToFront();
+                pnlitemsalesdescription.Refresh(); // Force UI update
+
+                // ✅ Send other panels behind
+                pnlsellitem.SendToBack();
+                pnlaccount.SendToBack();
+
+                // ✅ Fill in item details
+                selectedItemID = item.Id;
+                txtItemNameDesc.Text = item.ItemName;
+                txtPriceDesc.Text = item.Price;
+                txtLocationDesc.Text = item.Location;
+                richTextBox2.Text = item.Description;
+
+                // ✅ Set category in cmbCategoryDesc
+                if (cmbCategoryDesc.Items.Contains(item.Category))
+                {
+                    cmbCategoryDesc.SelectedItem = item.Category;
+                }
+                else
+                {
+                    cmbCategoryDesc.SelectedIndex = -1; // If category is not in the list, clear selection
+                }
+
+                // ✅ Display image
+                if (item.ItemImage != null && item.ItemImage.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(item.ItemImage))
+                    {
+                        pctbxitemclk.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    pctbxitemclk.Image = Properties.Resources.Screenshot_2025_03_26_185333;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error: No item details found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private void PopulateCategoryDropdowns()
+        {
+            string[] categories = { "ELECTRONICS", "APPLIANCES", "CLOTHES", "SHOES", "BAGS", "FURNITURES" };
+
+            // ✅ Populate both ComboBoxes
+            cmbCategory.Items.AddRange(categories);
+            cmbCategoryDesc.Items.AddRange(categories);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         private void AccountName_Click(object sender, EventArgs e)
         {
 
@@ -537,6 +673,180 @@ namespace marketplace
         private void pnlitems1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pnlhereclicked_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnitemdelete_Click(object sender, EventArgs e)
+        {
+            if (selectedItemID == -1)
+            {
+                MessageBox.Show("Please select an item to delete.", "No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult confirmDelete = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmDelete == DialogResult.Yes)
+            {
+                string connectionString = @"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;";
+
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM items WHERE id = @id"; // Use 'id' instead of 'item_id'
+
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", selectedItemID);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Item deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // ✅ Refresh the item list
+                                LoadUserItems();
+
+                                // ✅ Hide details panel again
+                                pnlitemsalesdescription.Visible = false;
+                                selectedItemID = -1; // Reset the selection
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to delete item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnedititem_Click(object sender, EventArgs e)
+        {
+            // ✅ Enable editing for input fields
+            txtItemNameDesc.Enabled = true;
+            txtPriceDesc.Enabled = true;
+            txtLocationDesc.Enabled = true;
+            richTextBox2.Enabled = true;
+
+            // ✅ Enable category selection and image update
+            cmbCategoryDesc.Enabled = true;
+            pctbxitemclk.Enabled = true;
+
+            // ✅ Enable "Save Changes" button
+            btnSaveChanges.Enabled = true;
+        }
+       
+        private void UpdateItemDetails()
+        {
+            if (selectedItemID == -1)
+            {
+                MessageBox.Show("No item selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string updatedItemName = txtItemNameDesc.Text;
+            string updatedPrice = txtPriceDesc.Text;
+            string updatedLocation = txtLocationDesc.Text;
+            string updatedDescription = richTextBox2.Text;
+            string updatedCategory = cmbCategoryDesc.SelectedItem?.ToString();
+
+            // ✅ Convert image to byte array
+            byte[] updatedImageBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                pctbxitemclk.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                updatedImageBytes = ms.ToArray();
+            }
+
+            string connectionString = @"Data Source=DESKTOP-V8S0DNV\SQLEXPRESS;Initial Catalog=marketplace;Integrated Security=True;";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"UPDATE items 
+                             SET item_name = @item_name, 
+                                 price = @price, 
+                                 location = @location, 
+                                 description = @description, 
+                                 category = @category, 
+                                 item_image = @item_image 
+                             WHERE id = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", selectedItemID);
+                        cmd.Parameters.AddWithValue("@item_name", updatedItemName);
+                        cmd.Parameters.AddWithValue("@price", updatedPrice);
+                        cmd.Parameters.AddWithValue("@location", updatedLocation);
+                        cmd.Parameters.AddWithValue("@description", updatedDescription);
+                        cmd.Parameters.AddWithValue("@category", updatedCategory);
+                        cmd.Parameters.AddWithValue("@item_image", updatedImageBytes);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Item updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadUserItems(); // ✅ Refresh item list
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            UpdateItemDetails();
+
+            // 🔹 Disable editing after saving
+            txtItemNameDesc.Enabled = false;
+            txtPriceDesc.Enabled = false;
+            txtLocationDesc.Enabled = false;
+            richTextBox2.Enabled = false;
+
+            // 🔹 Disable category selection and image update
+            cmbCategoryDesc.Enabled = false;
+            pctbxitemclk.Enabled = false;
+
+            // ✅ Disable "Save Changes" button after saving
+            btnSaveChanges.Enabled = false;
+        }
+
+        private void pctbxitemclk_Click(object sender, EventArgs e)
+        {
+            if (pctbxitemclk.Enabled) // Allow only when enabled (edit mode)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        pctbxitemclk.Image = Image.FromFile(openFileDialog.FileName);
+                    }
+                }
+            }
         }
     }
 }
